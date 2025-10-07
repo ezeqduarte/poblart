@@ -39,6 +39,27 @@ const {
         class="min-h-screen bg-bg text-zinc-100 selection:bg-zinc-200 selection:text-zinc-900"
     >
         <div
+            class="fixed top-1/2 -translate-y-1/2 left-4 z-[60] pointer-events-none"
+        >
+            <div
+                id="scroll-track"
+                class="relative h-[200px] w-[10px] p-[2px] rounded-md border border-white bg-zinc-950 overflow-hidden box-border"
+            >
+                <div
+                    id="scroll-fill"
+                    class="absolute left-[2px] top-[2px] right-[2px] bg-white rounded-[3px]"
+                    style="height:0px"
+                >
+                </div>
+            </div>
+        </div>
+        <div
+            class="pointer-events-none fixed inset-0 opacity-[0.07] mix-blend-screen"
+            aria-hidden="true"
+        >
+            <div class="absolute inset-0 noise"></div>
+        </div>
+        <div
             class="pointer-events-none fixed inset-0 opacity-[0.07] mix-blend-screen"
             aria-hidden="true"
         >
@@ -47,3 +68,32 @@ const {
         <slot />
     </body>
 </html>
+
+<script is:inline>
+  (function () {
+    const track = document.getElementById('scroll-track');
+    const fill = document.getElementById('scroll-fill');
+    if (!track || !fill) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function setProgress() {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      const max = Math.max(scrollHeight - clientHeight, 1);
+      const ratio = Math.min(Math.max(scrollTop / max, 0), 1);
+
+      const innerHeight = track.clientHeight - 4;
+      fill.style.height = (ratio * innerHeight) + 'px';
+    }
+
+    setProgress();
+    window.addEventListener('scroll', setProgress, { passive: true });
+    window.addEventListener('resize', setProgress);
+
+    if (!prefersReduced) {
+      fill.style.transition = 'height 180ms linear, background-color 150ms linear';
+    }
+  })();
+</script>

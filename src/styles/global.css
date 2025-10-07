@@ -30,6 +30,17 @@
     animation: fade .6s ease-out both;
 }
 
+html,
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
 @keyframes fade {
     to {
         opacity: 1;

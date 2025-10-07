@@ -28,9 +28,6 @@ import "../styles/global.css";
 				<a href="#obras" class="hover:text-white transition-colors"
 					>Obras</a
 				>
-				<a href="#manifiesto" class="hover:text-white transition-colors"
-					>Manifiesto</a
-				>
 				<a href="#about" class="hover:text-white transition-colors"
 					>Sobre mí</a
 				>
@@ -60,10 +57,10 @@ import "../styles/global.css";
 		</div>
 	</header>
 
-	<section class="relative overflow-hidden">
-		<div class="absolute -inset-x-10 -top-24 h-[44rem] bg-grid">
+	<section class="relative overflow-hidden bg-grid">
+		<div class="absolute -inset-x-10 h-full">
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/90 to-zinc-950"
+				class="absolute inset-0 bg-gradient-to-b from-[#16161663] via-zinc-950/90 to-[#161616]"
 			>
 			</div>
 		</div>
@@ -122,10 +119,11 @@ import "../styles/global.css";
 					<div
 						class="aspect-[4/5] w-full bg-zinc-900 flex items-center justify-center"
 					>
-						<span
-							class="text-xs tracking-wider text-zinc-400 uppercase"
-							>Ilustración destacada</span
-						>
+						<img
+							class="h-full object-cover"
+							src="/ilustraciones/POBLA-1.jpg"
+							alt="Portada"
+						/>
 					</div>
 				</PaperCard>
 			</div>
@@ -143,10 +141,10 @@ import "../styles/global.css";
 
 	<section
 		id="manifiesto"
-		class="mx-auto max-w-6xl px-4 pb-24 grid md:grid-cols-2 gap-8 items-start"
+		class="mx-auto max-w-6xl px-4 pb-24 grid md:grid-cols-2 gap-8 items-stretch"
 	>
 		<PaperCard>
-			<div class="p-6">
+			<div class="p-6 flex justify-center items-center h-full">
 				<p
 					class="leading-relaxed text-zinc-200/90 fade-in"
 					style="animation-delay:.05s"
@@ -173,13 +171,29 @@ import "../styles/global.css";
 				class="text-zinc-300 max-w-prose fade-in"
 				style="animation-delay:.2s"
 			>
-				Proyecto visual con identidad monocromática. Ilustraciones de
-				alto contraste, bordes toscos y estética de papel envejecido.
-				Minimalismo con textura: lo justo y necesario.
+				Poblart empezó como un momento de pausa. Un espacio donde puedo
+				desconectarme del ruido y volver a mirar con calma. Dibujar se
+				volvió una forma de escucharme, de soltar sin pensar demasiado.
+			</p>
+			<p
+				class="text-zinc-300 max-w-prose fade-in"
+				style="animation-delay:.3s"
+			>
+				Cada trazo me recuerda que no hace falta tener todo claro para
+				crear algo que valga la pena. A veces sale limpio, a veces
+				caótico, pero siempre sincero.
+			</p>
+			<p
+				class="text-zinc-300 max-w-prose fade-in"
+				style="animation-delay:.4s"
+			>
+				Poblart es ese espacio donde me permito simplemente estar. No
+				busco explicar, solo acompañar. Si algo en lo que ves te toca,
+				aunque sea un instante, ya cumplió su propósito.
 			</p>
 			<div
 				class="flex items-center gap-4 pt-2 fade-in"
-				style="animation-delay:.3s"
+				style="animation-delay:.5s"
 			>
 				<a
 					href="#"
@@ -231,12 +245,14 @@ import "../styles/global.css";
 			class="rounded-3xl border border-zinc-800 p-6 md:p-10 bg-zinc-950/40 fade-in"
 			style="animation-delay:.05s"
 		>
-			<div class="grid md:grid-cols-2 gap-8 items-center">
+			<div class="grid md:grid-cols-2 gap-8 items-end">
 				<div>
 					<h3 class="text-2xl font-bold">¿Colaboramos?</h3>
-					<p class="mt-2 text-zinc-300">
-						Encargos, tapas, afiches, portadas y piezas para
-						eventos. Todo en blanco y negro.
+					<p class="mt-2 text-zinc-300 max-w-prose">
+						Si tenés una idea que te mueve, un proyecto que te
+						ilusiona o simplemente algo que quieras explorar,
+						escribime. Me gusta crear desde la conexión, cuando el
+						arte nace de lo que sentimos, no de lo que planeamos.
 					</p>
 				</div>
 				<div class="flex md:justify-end">
@@ -276,7 +292,6 @@ import "../styles/global.css";
 				style="animation-delay:.1s"
 			>
 				<a href="#" class="hover:text-white">Instagram</a>
-				<a href="#" class="hover:text-white">Behance</a>
 				<a href="#contacto" class="hover:text-white">Contacto</a>
 			</div>
 		</div>
