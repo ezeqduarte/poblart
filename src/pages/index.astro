@@ -1,16 +1,142 @@
 ---
-
+import Base from "../layouts/Base.astro";
+import PaperCard from "../components/PaperCard.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Poblart — blanco & negro">
+	<header
+		class="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/75 border-b border-zinc-800"
+	>
+		<div
+			class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between"
+		>
+			<a
+				href="#"
+				aria-label="Poblart"
+				class="font-black tracking-wide text-xl md:text-2xl leading-none inline-flex items-baseline gap-2 fade-in"
+				style="animation-delay:.05s"
+			>
+				<span class="inline-block pr-2 border-r border-zinc-700"
+					>POBL</span
+				>
+				<span class="inline-block">ART</span>
+			</a>
+			<nav
+				class="hidden md:flex items-center gap-8 text-sm text-zinc-300"
+			>
+				<a href="#obras" class="hover:text-white transition-colors"
+					>Obras</a
+				>
+				<a href="#manifiesto" class="hover:text-white transition-colors"
+					>Manifiesto</a
+				>
+				<a href="#about" class="hover:text-white transition-colors"
+					>Sobre mí</a
+				>
+				<a href="#contacto" class="hover:text-white transition-colors"
+					>Contacto</a
+				>
+			</nav>
+			<a
+				href="#contacto"
+				class="group inline-flex items-center gap-2 rounded-2xl border border-zinc-700 px-3 py-1.5 text-sm hover:bg-white hover:text-zinc-900 transition-colors fade-in"
+				style="animation-delay:.1s"
+			>
+				Encargar
+				<svg
+					class="size-4 transition-transform group-hover:translate-x-0.5"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+					><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+					></path></svg
+				>
+			</a>
+		</div>
+	</header>
+
+	<section class="relative overflow-hidden">
+		<div class="absolute -inset-x-10 -top-24 h-[44rem] bg-grid">
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/90 to-zinc-950"
+			>
+			</div>
+		</div>
+
+		<div
+			class="relative mx-auto max-w-6xl px-4 pt-24 pb-20 grid md:grid-cols-2 gap-10 items-end"
+		>
+			<div>
+				<h1
+					class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] fade-in"
+					style="animation-delay:.1s"
+				>
+					Tinta, papel, abrazo<br /> y oscuridad.
+				</h1>
+				<p
+					class="mt-5 max-w-prose text-zinc-300 fade-in"
+					style="animation-delay:.2s"
+				>
+					Poblart es una exploración visual en blanco y negro.
+					Ilustraciones con textura analógica, trazos crudos y
+					silencios donde la luz abraza la sombra.
+				</p>
+				<div
+					class="mt-8 flex flex-wrap items-center gap-3 fade-in"
+					style="animation-delay:.3s"
+				>
+					<a
+						href="#obras"
+						class="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 px-4 py-2 hover:bg-white hover:text-zinc-900 transition-colors"
+					>
+						Ver obras
+						<svg
+							class="size-4"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+							><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+							></path></svg
+						>
+					</a>
+					<a
+						href="#manifiesto"
+						class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-zinc-300 hover:text-white"
+					>
+						Manifiesto
+					</a>
+				</div>
+			</div>
+
+			<div class="relative fade-in" style="animation-delay:.25s">
+				<PaperCard>
+					<div
+						class="aspect-[4/5] w-full bg-zinc-900 flex items-center justify-center"
+					>
+						<span
+							class="text-xs tracking-wider text-zinc-400 uppercase"
+							>Ilustración destacada</span
+						>
+					</div>
+				</PaperCard>
+			</div>
+		</div>
+	</section>
+
+	<section id="obras" class="mx-auto max-w-6xl px-4 pb-20">
+		<div class="flex items-end justify-between mb-6">
+			<h2 class="text-2xl md:text-3xl font-bold">Obras recientes</h2>
+			<a href="#" class="text-sm text-zinc-400 hover:text-white"
+				>Ver todas</a
+			>
+		</div>
+	</section>
+</Base>
